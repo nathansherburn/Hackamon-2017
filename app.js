@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 let db
 
-MongoClient.connect(MONGODB_URI || 'mongodb://localhost:27017/hackamon', function(err, database){
+MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/hackamon', function(err, database){
   if (err) return console.log(err)
   db = database
 })
