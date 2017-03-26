@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Respedia</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <style>
+    * {
+      font-family: Roboto;
+      box-sizing: border-box;
+      color: black !important; 
+    }
+
+    .ui-autocomplete {
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      overflow-x: hidden;
+      background-color: #fff !important;
+    } 
+
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    
+    body {
+      background-image: url("img/bg.jpeg");
+      background-repeat: no-repeat;
+      background-color: #444;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow-y: scroll;
+    }
+
+    .image1 {
+      background-image: url("img/titan.jpg");
+      background-repeat: no-repeat;
+      background-color: #444;
+      background-size: cover;
+    }
+    
+    #hello {
+      overflow: hidden;
+    }
+
+    .image2 {
+      background-image: url("img/N_STORM_A1R_6cols.jpg");
+      background-repeat: no-repeat;
+      background-color: #444;
+      background-size: cover;
+    }
+
+
+    .image3 {
+      background-image: url("img/Facs Jaz.jpg");
+      background-repeat: no-repeat;
+      background-color: #444;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1em;
+      font-weight: bold;
+    }
+    
+    #results {
+      margin: 140px auto 0px;
+      max-width: 960px;
+      width: 100%;
+    }
+    
+    #search-field {
+      box-sizing: border-box !important;
+      width: 960px !important;
+      padding: 40px;
+      border-radius: 4px !important;
+      border: none !important;
+      font-size: 2em !important;
+      display: flex !important;
+      background-color: #fff !important;
+      border: none !important;
+    }
+    
+    #search-box {
+      position: relative;
+      width: 100%;
+      z-index: 100;
+      background-color: #1e7598;
+      color: #000;
+      padding: 100px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      overflow:visible;
+    }
+    
+    #header {
+      z-index: 200;
+      background-color: #fff;
+      height: 400px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 200px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .card {
+      overflow: hidden;
+    }
+    
+    #text-description {
+      margin-left: 160px; padding: 20px;
+    }
+    @media only screen and (max-width: 1080px) {
+      #search-box {
+        padding: 20px;
+      }
+      #header {
+        height: 300px;
+      }
+      .logo {
+        height: 100px;
+        margin: 0 auto;
+        display: flex;
+      }
+      #search-field {
+        padding: 10px !important;
+        width: 100% !important;
+      }
+      #text-description{ margin: 0;}
+
+      #facilitylogo {
+        display: none !important;
+      }
+      #expando, .image1, .image2, .image3 {
+        display: none;
+      }
+    }
+  </style>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+  <div id="header">
+    <img class="logo" src="img/logo.png">
+  </div>
+
+  <div id="search-box">
+    <form action="/search" onsubmit="search(); return false;">
+      <input id="search-field" type="text" class="autocomplete" placeholder="Search...">
+    </form>
+  </div>
+
+
+  <div id="bannerad" class="container" style="width: 100%; overflow: hidden; padding: 0; margin: 0 auto;">
+    <div class="section" style="width: 100%; padding: 0; margin: 0;">
+        <div class="row" style="width: 100%; padding: 0; margin: 0;">
+          <div class="carousel carousel-slider" data-indicators="true" style="width: 100%; padding: 0; margin: 0;">
+            <a class="carousel-item" href="#one!">
+              <img src="img/mbdi.png">
+            </a>
+            <a class="carousel-item" href="#two!">
+              <img src="img/pipeline.png">
+            </a>
+            <a class="carousel-item" href="#three!">
+              <img src="img/proteinfeeder.png">
+            </a>
+            <a class="carousel-item" href="#four!">
+              <img src="img/electronmicroscope.png">
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <link href="https://api.motion.ai/sdk/webchat.css" rel="stylesheet" type="text/css">
+  <script src="js/webchat.js"></script>
+  <script>
+    motionAI_Init('42843?color=62a8ea&sendBtn=SEND&inputBox=Type%20something...&token=c32ec3fcf0a1ce259103ff5fcabe8f31',true,400,470,'img/chat_icon.png');
+  </script>
+
+</body>
+
+</html>
