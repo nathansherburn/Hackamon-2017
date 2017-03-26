@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 let db
 
-MongoClient.connect('mongodb://localhost:27017/hackamon', function(err, database){
+MongoClient.connect(MONGODB_URI || 'mongodb://localhost:27017/hackamon', function(err, database){
   if (err) return console.log(err)
   db = database
 })
@@ -37,9 +37,5 @@ app.get('/search', function(req, res) {
     }
   })
 })
-
-// app.post('/chatbot', function(req, res) {
-// 
-// })
 
 app.listen(3000)
