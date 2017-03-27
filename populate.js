@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 const csv = require('csvtojson')
 
 
-MongoClient.connect('mongodb://localhost:27017/hackamon', function(err, db) {
+MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/hackamon', function(err, db) {
     if (err) return console.log(err)
     let equipment = db.collection('equipment')
     csv()
